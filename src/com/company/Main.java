@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// r3klaw code
+        // r3klaw code
         String[] teams16 = {"Uruguay", "Portugal", "France", "Argentina", "Brazil", "Mexico",
                 "Belgium", "Japan", "Spain", "Russia", "Croatia", "Denmark", "Sweden", "Switzerland",
                 "Colombia", "England"};
 
-
+        int z = 0;
 //input data
         Scanner keyboard = new Scanner(System.in);
         Random result = new Random();
@@ -20,19 +20,19 @@ public class Main {
         boolean teamwc = false;
 
 // choice of the favourite team
-        for (int i = 0 ; i < 16 ; i++ ) {
+        for (int i = 0; i < 16; i++) {
             if (teams16[i].equalsIgnoreCase(team)) {
                 teamwc = true;
             }
         }
-        if(teamwc == false) {
+        if (!teamwc) {
             System.out.println("Your team is not in the Round of 16 ");
         }
 
 
 // the tournament begins (ROUND OF 16)
-        while (true) if (teamwc == true) {
-            int z = 0;
+        while (true) if (teamwc) {
+        //    int z = 0;
             String[] winnerof16 = new String[8];
             int a = 0;
 
@@ -59,6 +59,10 @@ public class Main {
                 }
                 System.out.print("[" + teams16[i] + "]" + " " + score1 + ":" + score2 + " " + "[" + teams16[i + 1] + "]" + " ");
                 a++;
+                // Calculate and display total score
+            int totalScore = (score1 + score2);
+
+            System.out.println("Total score is " + totalScore );
             }
             System.out.println();
             String[] winnerof8 = new String[4];
@@ -84,6 +88,10 @@ public class Main {
                 }
                 System.out.print("[" + winnerof16[k] + "]" + " " + score3 + ":" + score4 + " " + "[" + winnerof16[k + 1] + "]" + " ");
                 b++;
+                // Calculate and display total score
+                int totalScore = (score3 + score4);
+
+                System.out.println("Total score is " + totalScore );
             }
             System.out.println();
             String[] winnerof4 = new String[2];
@@ -109,6 +117,10 @@ public class Main {
                 }
                 System.out.print("[" + winnerof8[l] + "]" + " " + score5 + ":" + score6 + " " + "[" + winnerof8[l + 1] + "]" + " ");
                 c++;
+                // Calculate and display total score
+                int totalScore = (score5 + score6);
+
+                System.out.println("Total score is " + totalScore );
             }
             System.out.println();
             String[] winnerof2 = new String[1];
@@ -134,6 +146,10 @@ public class Main {
 
                 }
                 System.out.print("[" + winnerof4[m] + "]" + " " + score7 + ":" + score8 + " " + "[" + winnerof4[m + 1] + "]" + " ");
+                // Calculate and display total score
+                int totalScore = (score7 + score8);
+
+                System.out.println("Total score is " + totalScore );
                 System.out.println();
             }
 
@@ -146,4 +162,3 @@ public class Main {
         }
     }
 }
-
